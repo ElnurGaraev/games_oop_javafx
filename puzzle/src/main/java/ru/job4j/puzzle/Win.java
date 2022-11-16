@@ -4,8 +4,9 @@ public class Win {
     public static boolean check(int[][] board) {
         boolean rsl = false;
         for (int i = 0; i < board.length; i++) {
-            if (board[i][i] == 1 && Win.vertical(board, i) || Win.horizontal(board, i) {
+            if (board[i][i] == 1 && (Win.vertical(board, i) || Win.horizontal(board, i))) {
                 rsl = true;
+                break;
             }
         }
         return rsl;
@@ -31,9 +32,5 @@ public class Win {
             }
         }
         return rsl;
-    }
-
-    public static void main(String[] args) {
-
     }
 }
