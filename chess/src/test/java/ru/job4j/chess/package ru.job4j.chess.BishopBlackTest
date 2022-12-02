@@ -1,0 +1,39 @@
+package ru.job4j.chess;
+
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+import ru.job4j.chess.firuges.Cell;
+import ru.job4j.chess.firuges.black.BishopBlack;
+
+import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+class BishopBlackTest {
+ @Test
+    public void position() {
+        Cell cell = Cell.findBy(0, 7);
+        BishopBlack bishopBlack = new BishopBlack(cell);
+        Cell cellSec = bishopBlack.position();
+        assertThat(cell().isEqualTo(cellSec);
+    }
+
+ @Test
+     public void copy() {
+         Cell cell = Cell.findBy(0, 7);
+         BishopBlack bishopBlack = new BishopBlack(cell);
+         Cell cellSec = Cell.findBy(3, 4);
+         Figure bishopBlackCopy = bishopBlack.copy(cellSec);
+         assertThat(cellSec).isEqualTo(bishopBlackCopy.position());
+     }
+
+ @Test
+      public void way() {
+         Cell cell = Cell.C1
+         BishopBlack bishopBlack = new BishopBlack(cell);
+         Cell[] way = bishopBlack.way(Cell.G5);
+         Cell[] expected = {Cell.D2, Cell.E3, Cell.F4, Cell.G5};
+         assertThat(way).isEqualTo(expected);
+      }
+}
+
+
