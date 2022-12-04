@@ -8,7 +8,7 @@ import ru.job4j.chess.firuges.black.BishopBlack;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-@Disabled("Тесты отключены. Удалить аннотацию после реализации всех методов по заданию.")
+@Disabled
 public class LogicTest {
 
     @Test
@@ -41,6 +41,6 @@ public class LogicTest {
         OccupiedCellException exception = assertThrows(OccupiedCellException.class, () -> {
             logic.move(Cell.E1, Cell.H2);
         });
-        assertThat(exception.getMessage()).isEqualTo("Impossible way for this figure.".);
+        assertThat(exception.getMessage()).isEqualTo("Impossible way for this figure.");
     }
 }
